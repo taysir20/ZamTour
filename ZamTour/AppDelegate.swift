@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
-    
+    //Función para la inicialziación del Login de Facebook
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let handlet=FBSDKApplicationDelegate.sharedInstance().application(app, open: url,sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String,annotation: options[UIApplicationOpenURLOptionsKey.annotation])
         

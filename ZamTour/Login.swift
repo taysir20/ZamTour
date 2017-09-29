@@ -22,33 +22,67 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
         super.viewDidLoad()
         UIApplication.shared.statusBarStyle = .lightContent
         lblResultado.text?=""
-        let  loginButton = FBSDKLoginButton()
-        view.addSubview(loginButton)
+        let  loginButton = FBSDKLoginButton()//creacion de btn de facebook mediante una cte
+        view.addSubview(loginButton) //añadimos el btn de facebook a la view para mostrarlo
+        //Posicionamiento y estilo para el btn Facebook en la view
         loginButton.frame.origin = CGPoint(x: view.layer.frame.width/2 - loginButton.layer.frame.width/2, y: 415)
         loginButton.layer.borderWidth = 1
         loginButton.layer.borderColor = UIColor.white.cgColor
         loginButton.layer.cornerRadius = 2.5
         loginButton.delegate=self
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
     override var preferredStatusBarStyle: UIStatusBarStyle { // función con la que cambiamos el color del statusBar a blanco
         return .lightContent
     }
+    
+    //Función de logout de Facebook
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Has salido de Facebook")
     }
-    
+    //Función que comprueba si el Login de Facebook se realizó correctamente
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if error != nil{
             print(error)
             return
         }
         print("Loggin exitoso")
+        showEmailAdress()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func showEmailAdress(){
+        let accessToken = FBSDKAccessToken.current()
+        guard let accessTokenString = accessToken?.tokenString else {
+            return
+        }
+        let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        Auth.auth().signIn(with: credentials, completion: { (user, error) in
+            if error != nil {
+                print("Se ha producido un error relacionado con el usuario de Facebook: ", error)
+                return
+            }
+              print("Enhorabuena has sido logueado con tu usuario de Facebook", user)
+            self.lblResultado?.text = "¡Bienvenido!"
+            
+            
+                self.performSegue(withIdentifier: "signIn", sender: self)
+            
+            
+
+        })
+        FBSDKGraphRequest(graphPath: "/me", parameters:["fields": "id, name, email"]).start { (connection, result, err) in
+            if err != nil {
+                print("Error en la muestra de los campos", err)
+                return
+            }
+          print(result)
+        }
     }
+
     
     
     func btnSignIn(_ sender: Any) {
