@@ -10,14 +10,13 @@
 		0A81E9C89A3D54F9716D0CFB /* Pods_ZamTourUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD4267351DBDB9CF11C21F0B /* Pods_ZamTourUITests.framework */; };
 		5DDBFDC8C56EFEAA5F1137AB /* Pods_ZamTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3552352340965D5B95B4DD4 /* Pods_ZamTour.framework */; };
 		7371213B1F7E7D3C00EA8278 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371213A1F7E7D3C00EA8278 /* AppDelegate.swift */; };
-		7371213D1F7E7D3C00EA8278 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371213C1F7E7D3C00EA8278 /* ViewController.swift */; };
 		737121401F7E7D3C00EA8278 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7371213E1F7E7D3C00EA8278 /* Main.storyboard */; };
 		737121421F7E7D3C00EA8278 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737121411F7E7D3C00EA8278 /* Assets.xcassets */; };
 		737121451F7E7D3C00EA8278 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737121431F7E7D3C00EA8278 /* LaunchScreen.storyboard */; };
 		737121501F7E7D3C00EA8278 /* ZamTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371214F1F7E7D3C00EA8278 /* ZamTourTests.swift */; };
 		7371215B1F7E7D3C00EA8278 /* ZamTourUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371215A1F7E7D3C00EA8278 /* ZamTourUITests.swift */; };
 		737121691F7E7D8E00EA8278 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737121681F7E7D8E00EA8278 /* DataHolder.swift */; };
-		7371216B1F7E7DCA00EA8278 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371216A1F7E7DCA00EA8278 /* LoginViewController.swift */; };
+		7371216B1F7E7DCA00EA8278 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371216A1F7E7DCA00EA8278 /* Login.swift */; };
 		7371216D1F7E7DFC00EA8278 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371216C1F7E7DFC00EA8278 /* Register.swift */; };
 		7371216F1F7E7E8C00EA8278 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7371216E1F7E7E8C00EA8278 /* GoogleService-Info.plist */; };
 		D454000C678C3F465DEF4E12 /* Pods_ZamTourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21C099A7882BDF4416195FE /* Pods_ZamTourTests.framework */; };
@@ -48,7 +47,6 @@
 		7214314AEA3AC8ABEDBBD94C /* Pods-ZamTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZamTour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZamTour/Pods-ZamTour.debug.xcconfig"; sourceTree = "<group>"; };
 		737121371F7E7D3C00EA8278 /* ZamTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZamTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7371213A1F7E7D3C00EA8278 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7371213C1F7E7D3C00EA8278 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7371213F1F7E7D3C00EA8278 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		737121411F7E7D3C00EA8278 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		737121441F7E7D3C00EA8278 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,9 +58,10 @@
 		7371215A1F7E7D3C00EA8278 /* ZamTourUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZamTourUITests.swift; sourceTree = "<group>"; };
 		7371215C1F7E7D3C00EA8278 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		737121681F7E7D8E00EA8278 /* DataHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
-		7371216A1F7E7DCA00EA8278 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7371216A1F7E7DCA00EA8278 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7371216C1F7E7DFC00EA8278 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		7371216E1F7E7E8C00EA8278 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73D5059C1F7EA09D0040AFFC /* ZamTour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZamTour.entitlements; sourceTree = "<group>"; };
 		B21C099A7882BDF4416195FE /* Pods_ZamTourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZamTourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37AABECB40EFDA49B157CEA /* Pods-ZamTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZamTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZamTour/Pods-ZamTour.release.xcconfig"; sourceTree = "<group>"; };
 		D3552352340965D5B95B4DD4 /* Pods_ZamTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZamTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,15 +131,15 @@
 		737121391F7E7D3C00EA8278 /* ZamTour */ = {
 			isa = PBXGroup;
 			children = (
+				73D5059C1F7EA09D0040AFFC /* ZamTour.entitlements */,
 				7371216E1F7E7E8C00EA8278 /* GoogleService-Info.plist */,
 				7371213A1F7E7D3C00EA8278 /* AppDelegate.swift */,
-				7371213C1F7E7D3C00EA8278 /* ViewController.swift */,
 				7371213E1F7E7D3C00EA8278 /* Main.storyboard */,
 				737121411F7E7D3C00EA8278 /* Assets.xcassets */,
 				737121431F7E7D3C00EA8278 /* LaunchScreen.storyboard */,
 				737121461F7E7D3C00EA8278 /* Info.plist */,
 				737121681F7E7D8E00EA8278 /* DataHolder.swift */,
-				7371216A1F7E7DCA00EA8278 /* LoginViewController.swift */,
+				7371216A1F7E7DCA00EA8278 /* Login.swift */,
 				7371216C1F7E7DFC00EA8278 /* Register.swift */,
 			);
 			path = ZamTour;
@@ -256,6 +255,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = RFLA9A7KV8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					7371214A1F7E7D3C00EA8278 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -375,6 +379,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZamTour/Pods-ZamTour-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -383,6 +391,10 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -482,8 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7371216B1F7E7DCA00EA8278 /* LoginViewController.swift in Sources */,
-				7371213D1F7E7D3C00EA8278 /* ViewController.swift in Sources */,
+				7371216B1F7E7DCA00EA8278 /* Login.swift in Sources */,
 				737121691F7E7D8E00EA8278 /* DataHolder.swift in Sources */,
 				7371213B1F7E7D3C00EA8278 /* AppDelegate.swift in Sources */,
 				7371216D1F7E7DFC00EA8278 /* Register.swift in Sources */,
@@ -641,6 +652,7 @@
 			baseConfigurationReference = 7214314AEA3AC8ABEDBBD94C /* Pods-ZamTour.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ZamTour/ZamTour.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = RFLA9A7KV8;
 				INFOPLIST_FILE = ZamTour/Info.plist;
@@ -658,6 +670,7 @@
 			baseConfigurationReference = B37AABECB40EFDA49B157CEA /* Pods-ZamTour.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ZamTour/ZamTour.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = RFLA9A7KV8;
 				INFOPLIST_FILE = ZamTour/Info.plist;

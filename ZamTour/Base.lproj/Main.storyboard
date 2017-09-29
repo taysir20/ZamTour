@@ -17,7 +17,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="Login" customModule="ProyectoFinal2DAMP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Login" customModule="ZamTour" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -141,7 +141,7 @@
         <!--Register-->
         <scene sceneID="rRN-kF-qP6">
             <objects>
-                <viewController id="E7s-5d-jy0" customClass="Register" customModule="ProyectoFinal2DAMP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="E7s-5d-jy0" customClass="Register" customModule="ZamTour" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tao-RH-k2D"/>
                         <viewControllerLayoutGuide type="bottom" id="VAq-M6-tZM"/>
@@ -270,8 +270,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lx1-z4-HQp">
+                                <rect key="frame" x="0.0" y="-2" width="375" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.074727588189999999" green="0.5" blue="0.33258929520000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnQ-Qo-10m">
-                                <rect key="frame" x="16" y="20" width="49" height="32"/>
+                                <rect key="frame" x="0.0" y="20" width="49" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="left"/>
                                 <connections>

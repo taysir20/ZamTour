@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3AFA9A1FF7F9866245806083F6F6A4C6"
+               BlueprintIdentifier = "E78D473C3E9528049CA2FD07A60F2479"
                BuildableName = "Pods_ZamTour.framework"
                BlueprintName = "Pods-ZamTour"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3AFA9A1FF7F9866245806083F6F6A4C6"
+            BlueprintIdentifier = "E78D473C3E9528049CA2FD07A60F2479"
             BuildableName = "Pods_ZamTour.framework"
             BlueprintName = "Pods-ZamTour"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -31,6 +31,9 @@ class Register: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle { // función con la que cambiamos el color del statusBar a blanco
+        return .lightContent
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
