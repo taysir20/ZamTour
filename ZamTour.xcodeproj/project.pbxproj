@@ -19,6 +19,7 @@
 		7371216B1F7E7DCA00EA8278 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371216A1F7E7DCA00EA8278 /* Login.swift */; };
 		7371216D1F7E7DFC00EA8278 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371216C1F7E7DFC00EA8278 /* Register.swift */; };
 		7371216F1F7E7E8C00EA8278 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7371216E1F7E7E8C00EA8278 /* GoogleService-Info.plist */; };
+		739399B81F822DA4006671CF /* VCPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739399B71F822DA4006671CF /* VCPages.swift */; };
 		D454000C678C3F465DEF4E12 /* Pods_ZamTourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21C099A7882BDF4416195FE /* Pods_ZamTourTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		7371216A1F7E7DCA00EA8278 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7371216C1F7E7DFC00EA8278 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		7371216E1F7E7E8C00EA8278 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		739399B71F822DA4006671CF /* VCPages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPages.swift; sourceTree = "<group>"; };
 		73D5059C1F7EA09D0040AFFC /* ZamTour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZamTour.entitlements; sourceTree = "<group>"; };
 		B21C099A7882BDF4416195FE /* Pods_ZamTourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZamTourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37AABECB40EFDA49B157CEA /* Pods-ZamTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZamTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZamTour/Pods-ZamTour.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				737121681F7E7D8E00EA8278 /* DataHolder.swift */,
 				7371216A1F7E7DCA00EA8278 /* Login.swift */,
 				7371216C1F7E7DFC00EA8278 /* Register.swift */,
+				739399B71F822DA4006671CF /* VCPages.swift */,
 			);
 			path = ZamTour;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			files = (
 				7371216B1F7E7DCA00EA8278 /* Login.swift in Sources */,
 				737121691F7E7D8E00EA8278 /* DataHolder.swift in Sources */,
+				739399B81F822DA4006671CF /* VCPages.swift in Sources */,
 				7371213B1F7E7D3C00EA8278 /* AppDelegate.swift in Sources */,
 				7371216D1F7E7DFC00EA8278 /* Register.swift in Sources */,
 			);

@@ -12,6 +12,8 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class DataHolder: NSObject {
+    
+    var errorLoginFacebook: Error! = nil
     static let sharedInstance:DataHolder=DataHolder() //Cte que creamos para poder acceder a todos los métodos del DataHolder desde otras clases.
     var ref: DatabaseReference! //Establecemos una variable de tipo DatabaseReference para luego llamar a las funciones del firebase que establecen una referencia  ala bbdd.
     func initFireBase(){

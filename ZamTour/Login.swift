@@ -17,9 +17,27 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
     @IBOutlet weak var lblResultado: UILabel!
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var passView: UIView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //comprobación de logueo del usuario
+       /* Auth.auth().addStateDidChangeListener { (auth, user) in
+                     // ...
+                    if(user != nil){
+                        self.performSegue(withIdentifier: "signIn", sender: self)
+                    }
+                    else{
+                        print("no está logueado")
+                        }
+            
+            
+            
+                    }
+        
+        */
+       
         UIApplication.shared.statusBarStyle = .lightContent
         lblResultado.text?=""
         let  loginButton = FBSDKLoginButton()//creacion de btn de facebook mediante una cte
@@ -30,6 +48,7 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
         loginButton.layer.borderColor = UIColor.white.cgColor
         loginButton.layer.cornerRadius = 2.5
         loginButton.delegate=self
+       
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,11 +68,15 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if error != nil{
             print(error)
+            DataHolder.sharedInstance.errorLoginFacebook = error
             return
         }
+      
         print("Loggin exitoso")
         showEmailAdress()
     }
+    
+    //Método Sign In de Facebook
     func showEmailAdress(){
         let accessToken = FBSDKAccessToken.current()
         guard let accessTokenString = accessToken?.tokenString else {

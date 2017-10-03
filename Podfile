@@ -14,6 +14,7 @@ target 'ZamTour' do
 pod 'FBSDKCoreKit'
 pod 'FBSDKShareKit'
 pod 'FBSDKLoginKit'
+
   target 'ZamTourTests' do
     inherit! :search_paths
     # Pods for testing
