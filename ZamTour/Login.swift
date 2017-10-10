@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 import FBSDKLoginKit
 class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLoginButtonDelegate{
     
@@ -23,10 +25,35 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
         super.viewDidLoad()
         
         //comprobación de logueo del usuario
-       /* Auth.auth().addStateDidChangeListener { (auth, user) in
+       Auth.auth().addStateDidChangeListener { (auth, user) in
                      // ...
                     if(user != nil){
-                        self.performSegue(withIdentifier: "signIn", sender: self)
+                        DataHolder.sharedInstance.ref.child("Profile").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
+                            
+                            DataHolder.sharedInstance.Usuario=user
+                            let value = snapshot.value as? NSDictionary
+                            DataHolder.sharedInstance.uid=(Auth.auth().currentUser?.uid)!
+                            if(value == nil){
+                                FBSDKGraphRequest(graphPath: "/me", parameters:["fields": "id, name, email"]).start { (connection, result, err) in
+                                    if err != nil {
+                                        print("Error en la muestra de los campos", err)
+                                        return
+                                    }
+                                    print(result)
+                                    let hashMap = result as! NSDictionary
+                                    DataHolder.sharedInstance.userEmail = (hashMap["email"] as! String)
+                                    print(DataHolder.sharedInstance.userEmail)
+                                    self.performSegue(withIdentifier: "createProfile", sender: self)
+                                    
+                                    }
+                               
+                            }else{
+                                self.performSegue(withIdentifier: "signIn", sender: self)
+                            }
+                            
+                            
+                        })
+                        
                     }
                     else{
                         print("no está logueado")
@@ -36,7 +63,7 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
             
                     }
         
-        */
+        
        
         UIApplication.shared.statusBarStyle = .lightContent
         lblResultado.text?=""
@@ -48,6 +75,7 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
         loginButton.layer.borderColor = UIColor.white.cgColor
         loginButton.layer.cornerRadius = 2.5
         loginButton.delegate=self
+        loginButton.readPermissions = ["public_profile","email"] // damos permisos para poder obtener el email.
        
     }
     
@@ -68,7 +96,6 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if error != nil{
             print(error)
-            DataHolder.sharedInstance.errorLoginFacebook = error
             return
         }
       
@@ -90,20 +117,34 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
             }
               print("Enhorabuena has sido logueado con tu usuario de Facebook", user)
             self.lblResultado?.text = "¡Bienvenido!"
-            
-            
-                self.performSegue(withIdentifier: "signIn", sender: self)
-            
+            let UserId = Auth.auth().currentUser?.uid
+            DataHolder.sharedInstance.ref.child("Profile").child(UserId!).observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
+                
+                DataHolder.sharedInstance.Usuario=user
+                let value = snapshot.value as? NSDictionary
+                DataHolder.sharedInstance.uid=UserId
+                if(value == nil){
+                    FBSDKGraphRequest(graphPath: "/me", parameters:["fields": "id, name, email"]).start { (connection, result, err) in
+                        if err != nil {
+                            print("Error en la muestra de los campos", err)
+                            return
+                        }
+                        print(result)
+                        let hashMap = result as! NSDictionary
+                        DataHolder.sharedInstance.userEmail = hashMap["email"] as! String
+                    }
+                    self.performSegue(withIdentifier: "createProfile", sender: self)
+                    
+                }else{
+                    self.performSegue(withIdentifier: "signIn", sender: self)
+                }
+                
+                
+            })
             
 
         })
-        FBSDKGraphRequest(graphPath: "/me", parameters:["fields": "id, name, email"]).start { (connection, result, err) in
-            if err != nil {
-                print("Error en la muestra de los campos", err)
-                return
-            }
-          print(result)
-        }
+       
     }
 
     
@@ -126,8 +167,21 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
                 // a la pantalla de "inicio de sesión" de nuevo.
                 let when = DispatchTime.now() + 3
                 DispatchQueue.main.asyncAfter(deadline: when){
-                    
-                    self.performSegue(withIdentifier: "signIn", sender: self)
+                    let UserId = Auth.auth().currentUser?.uid
+                    DataHolder.sharedInstance.ref.child("Profile").child(UserId!).observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
+                        
+                        DataHolder.sharedInstance.Usuario=user
+                        let value = snapshot.value as? NSDictionary
+                        DataHolder.sharedInstance.uid=UserId
+                        if(value == nil){
+                            self.performSegue(withIdentifier: "createProfile", sender: self)
+                        }else{
+                            self.performSegue(withIdentifier: "signIn", sender: self)
+                        }
+                        
+                        
+                    })
+                   
                     
                 }
                 

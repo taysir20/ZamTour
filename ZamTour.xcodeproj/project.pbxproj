@@ -20,6 +20,9 @@
 		7371216D1F7E7DFC00EA8278 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371216C1F7E7DFC00EA8278 /* Register.swift */; };
 		7371216F1F7E7E8C00EA8278 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7371216E1F7E7E8C00EA8278 /* GoogleService-Info.plist */; };
 		739399B81F822DA4006671CF /* VCPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739399B71F822DA4006671CF /* VCPages.swift */; };
+		73A9B1A91F8CEB3600E3098C /* QRController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A9B1A81F8CEB3600E3098C /* QRController.swift */; };
+		73A9B1AB1F8CEC8900E3098C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A9B1AA1F8CEC8900E3098C /* AVFoundation.framework */; };
+		73CA66BE1F83D9C400E47206 /* ProfileCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA66BD1F83D9C400E47206 /* ProfileCreate.swift */; };
 		D454000C678C3F465DEF4E12 /* Pods_ZamTourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21C099A7882BDF4416195FE /* Pods_ZamTourTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +66,9 @@
 		7371216C1F7E7DFC00EA8278 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		7371216E1F7E7E8C00EA8278 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		739399B71F822DA4006671CF /* VCPages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPages.swift; sourceTree = "<group>"; };
+		73A9B1A81F8CEB3600E3098C /* QRController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRController.swift; sourceTree = "<group>"; };
+		73A9B1AA1F8CEC8900E3098C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		73CA66BD1F83D9C400E47206 /* ProfileCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCreate.swift; sourceTree = "<group>"; };
 		73D5059C1F7EA09D0040AFFC /* ZamTour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZamTour.entitlements; sourceTree = "<group>"; };
 		B21C099A7882BDF4416195FE /* Pods_ZamTourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZamTourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37AABECB40EFDA49B157CEA /* Pods-ZamTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZamTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZamTour/Pods-ZamTour.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A9B1AB1F8CEC8900E3098C /* AVFoundation.framework in Frameworks */,
 				5DDBFDC8C56EFEAA5F1137AB /* Pods_ZamTour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +108,7 @@
 		12561DDCE2F7427F487FB4D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73A9B1AA1F8CEC8900E3098C /* AVFoundation.framework */,
 				D3552352340965D5B95B4DD4 /* Pods_ZamTour.framework */,
 				B21C099A7882BDF4416195FE /* Pods_ZamTourTests.framework */,
 				FD4267351DBDB9CF11C21F0B /* Pods_ZamTourUITests.framework */,
@@ -144,6 +152,8 @@
 				7371216A1F7E7DCA00EA8278 /* Login.swift */,
 				7371216C1F7E7DFC00EA8278 /* Register.swift */,
 				739399B71F822DA4006671CF /* VCPages.swift */,
+				73CA66BD1F83D9C400E47206 /* ProfileCreate.swift */,
+				73A9B1A81F8CEB3600E3098C /* QRController.swift */,
 			);
 			path = ZamTour;
 			sourceTree = "<group>";
@@ -498,6 +508,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7371216B1F7E7DCA00EA8278 /* Login.swift in Sources */,
+				73CA66BE1F83D9C400E47206 /* ProfileCreate.swift in Sources */,
+				73A9B1A91F8CEB3600E3098C /* QRController.swift in Sources */,
 				737121691F7E7D8E00EA8278 /* DataHolder.swift in Sources */,
 				739399B81F822DA4006671CF /* VCPages.swift in Sources */,
 				7371213B1F7E7D3C00EA8278 /* AppDelegate.swift in Sources */,
