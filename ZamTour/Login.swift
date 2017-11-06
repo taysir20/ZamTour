@@ -25,7 +25,7 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
         super.viewDidLoad()
         
         //comprobación de logueo del usuario
-       Auth.auth().addStateDidChangeListener { (auth, user) in
+   /*   Auth.auth().addStateDidChangeListener { (auth, user) in
                      // ...
                     if(user != nil){
                         DataHolder.sharedInstance.ref.child("Profile").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
@@ -58,12 +58,19 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
                     else{
                         print("no está logueado")
                         }
-            
+ 
             
             
                     }
         
+    */
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
        
         UIApplication.shared.statusBarStyle = .lightContent
         lblResultado.text?=""
@@ -76,7 +83,7 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
         loginButton.layer.cornerRadius = 2.5
         loginButton.delegate=self
         loginButton.readPermissions = ["public_profile","email"] // damos permisos para poder obtener el email.
-       
+ 
     }
     
     override func didReceiveMemoryWarning() {
@@ -118,7 +125,7 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
               print("Enhorabuena has sido logueado con tu usuario de Facebook", user)
             self.lblResultado?.text = "¡Bienvenido!"
             let UserId = Auth.auth().currentUser?.uid
-            DataHolder.sharedInstance.ref.child("Profile").child(UserId!).observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
+            DataHolder.sharedInstance.firDataBaseRef.child("Profile").child(UserId!).observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
                 
                 DataHolder.sharedInstance.Usuario=user
                 let value = snapshot.value as? NSDictionary
@@ -147,7 +154,10 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
        
     }
 
-    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
     func btnSignIn(_ sender: Any) {
         signIn()
@@ -168,7 +178,7 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
                 let when = DispatchTime.now() + 3
                 DispatchQueue.main.asyncAfter(deadline: when){
                     let UserId = Auth.auth().currentUser?.uid
-                    DataHolder.sharedInstance.ref.child("Profile").child(UserId!).observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
+                    DataHolder.sharedInstance.firDataBaseRef.child("Profile").child(UserId!).observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
                         
                         DataHolder.sharedInstance.Usuario=user
                         let value = snapshot.value as? NSDictionary

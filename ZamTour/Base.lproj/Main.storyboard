@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Uf7-rf-Wxl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Arial.ttf">
+            <string>ArialMT</string>
+        </array>
+        <array key="Kailasa.ttc">
+            <string>Kailasa</string>
+        </array>
         <array key="billabong.ttf">
             <string>Billabong</string>
         </array>
@@ -310,14 +316,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resultado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAo-cb-f1N">
-                                <rect key="frame" x="20" y="498" width="334" height="71"/>
+                                <rect key="frame" x="20" y="476" width="334" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fzM-SD-pZY">
-                                <rect key="frame" x="16" y="49" width="343" height="306"/>
+                                <rect key="frame" x="16" y="40" width="343" height="306"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -326,31 +332,57 @@
                         <color key="tintColor" red="0.074727588189999999" green="0.5" blue="0.33258929520000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
-                        <outlet property="lblResult" destination="vAo-cb-f1N" id="sbp-3Z-eae"/>
-                        <outlet property="viewMain" destination="fzM-SD-pZY" id="wVb-kf-3yS"/>
+                        <outlet property="lblResult" destination="vAo-cb-f1N" id="esW-CP-fmF"/>
+                        <outlet property="viewMain" destination="fzM-SD-pZY" id="EqK-BP-B5k"/>
+                        <segue destination="FBb-j1-vh4" kind="show" identifier="viewOfer" id="GMG-DU-0J4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="365-Ea-vGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1501.5999999999999" y="122.78860569715144"/>
         </scene>
+        <!--Img Ofer View Controller-->
+        <scene sceneID="Zpa-Es-IeJ">
+            <objects>
+                <viewController id="FBb-j1-vh4" customClass="ImgOferViewController" customModule="ZamTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e5q-Eu-UEr"/>
+                        <viewControllerLayoutGuide type="bottom" id="QeY-Q6-yeh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BR6-iy-gL9" customClass="Img">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNp-JI-h1u">
+                                <rect key="frame" x="189" y="510" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="volver"/>
+                                <connections>
+                                    <segue destination="Uf7-rf-Wxl" kind="show" id="VzP-k6-cq7"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="69L-bg-ke5">
+                                <rect key="frame" x="32" y="28" width="310" height="238"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="69L-bg-ke5" id="Xq8-ig-gOc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VEO-Ya-UbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1733.5999999999999" y="827.13643178410803"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ac4-74-FwB">
             <objects>
-                <viewController storyboardIdentifier="RedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pwr-d8-vBT" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fPf-FZ-KgJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="gfS-xl-5nl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0KZ-Ev-H0k">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.33333333333333331" green="0.66666666666666663" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
-                </viewController>
+                <viewController storyboardIdentifier="RedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pwr-d8-vBT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iQ-HJ-cen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2175" y="123"/>
+            <point key="canvasLocation" x="2173.5999999999999" y="122.78860569715144"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hcg-26-ozX">
@@ -548,7 +580,7 @@
         <image name="logo-1" width="205" height="198"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pIe-Cr-A93"/>
         <segue reference="ajf-S3-A6E"/>
+        <segue reference="pIe-Cr-A93"/>
     </inferredMetricsTieBreakers>
 </document>

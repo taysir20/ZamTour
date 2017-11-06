@@ -5,25 +5,25 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - FBSDKCoreKit (4.27.0):
+  - FBSDKCoreKit (4.27.1):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.27.0):
+  - FBSDKLoginKit (4.27.1):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.27.0):
+  - FBSDKShareKit (4.27.1):
     - FBSDKCoreKit
-  - Firebase/Auth (4.3.0):
+  - Firebase/Auth (4.4.0):
     - Firebase/Core
-    - FirebaseAuth (= 4.2.1)
-  - Firebase/Core (4.3.0):
+    - FirebaseAuth (= 4.3.0)
+  - Firebase/Core (4.4.0):
     - FirebaseAnalytics (= 4.0.4)
-    - FirebaseCore (= 4.0.8)
-  - Firebase/Database (4.3.0):
+    - FirebaseCore (= 4.0.9)
+  - Firebase/Database (4.4.0):
     - Firebase/Core
-    - FirebaseDatabase (= 4.1.0)
-  - Firebase/Messaging (4.3.0):
+    - FirebaseDatabase (= 4.1.1)
+  - Firebase/Messaging (4.4.0):
     - Firebase/Core
-    - FirebaseMessaging (= 2.0.4)
-  - Firebase/Storage (4.3.0):
+    - FirebaseMessaging (= 2.0.5)
+  - Firebase/Storage (4.4.0):
     - Firebase/Core
     - FirebaseStorage (= 2.0.2)
   - FirebaseAnalytics (4.0.4):
@@ -31,19 +31,19 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseAuth (4.2.1):
+  - FirebaseAuth (4.3.0):
     - FirebaseAnalytics (~> 4.0)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.8):
+  - FirebaseCore (4.0.9):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseDatabase (4.1.0):
+  - FirebaseDatabase (4.1.1):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (2.0.4)
-  - FirebaseMessaging (2.0.4):
+  - FirebaseInstanceID (2.0.5)
+  - FirebaseMessaging (2.0.5):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
@@ -86,16 +86,16 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  FBSDKCoreKit: ebc6c5f5b3f0e72396041050e2266781a38ac587
-  FBSDKLoginKit: 887be4b7452e1c5a3cc4485ce152529965a0c41e
-  FBSDKShareKit: 4f83956d4ca2960730fe7588a168eb8d535c06dc
-  Firebase: 83283761a1ef6dc9846e03d08059f51421afbd65
+  FBSDKCoreKit: 03365dad5d790249196ffad8be4f6d8a2d98f932
+  FBSDKLoginKit: 66ff53b73cffd967ab773e32fac39e90a60e6d46
+  FBSDKShareKit: 6a6a0ef9e850c741e4e1d7a7d21335205e997ec1
+  Firebase: 3e92884a63e8f76d107c43a67d2ab9071e1eda10
   FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
-  FirebaseAuth: d7f047fbeab98062b98ea933b8d934e0fb1190e2
-  FirebaseCore: 69b1a5ac5f857ba6d5fd9d5fe794f4786dd5e579
-  FirebaseDatabase: 607284a103e961d7f5863ee603cab5e85f443bd6
-  FirebaseInstanceID: 70c2b877e9338971b2429ea5a4293df6961aa44e
-  FirebaseMessaging: 3dd86bfda2acb680b05c97f3f8ac566e9bb87b2a
+  FirebaseAuth: e0087d479709b20b9613b804704a928d6eafb052
+  FirebaseCore: ebe73f64302705e693b1de9919a76edbdd17a19d
+  FirebaseDatabase: 2e6e8e110b93b9a6e7aac71774c769a363035cb1
+  FirebaseInstanceID: f2b688c66b972f30d7fa9f5f9f91455454a03b47
+  FirebaseMessaging: e25dc87045e76dfe9e920a5741dc3fe7e3ef2268
   FirebaseStorage: 0cca42d9b889a0227c3a50121f45a4469fc9eb27
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
