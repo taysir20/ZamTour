@@ -23,12 +23,12 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       /*
         //comprobación de logueo del usuario
-   /*   Auth.auth().addStateDidChangeListener { (auth, user) in
+      Auth.auth().addStateDidChangeListener { (auth, user) in
                      // ...
                     if(user != nil){
-                        DataHolder.sharedInstance.ref.child("Profile").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
+                        DataHolder.sharedInstance.firDataBaseRef.child("Profile").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
                             
                             DataHolder.sharedInstance.Usuario=user
                             let value = snapshot.value as? NSDictionary
@@ -63,8 +63,8 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
             
                     }
         
-    */
-        
+    
+        */
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
@@ -109,8 +109,10 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
         print("Loggin exitoso")
         showEmailAdress()
     }
+ 
     
     //Método Sign In de Facebook
+    
     func showEmailAdress(){
         let accessToken = FBSDKAccessToken.current()
         guard let accessTokenString = accessToken?.tokenString else {
@@ -178,6 +180,7 @@ class Login: UIViewController,UITextViewDelegate,UITextFieldDelegate, FBSDKLogin
                 let when = DispatchTime.now() + 3
                 DispatchQueue.main.asyncAfter(deadline: when){
                     let UserId = Auth.auth().currentUser?.uid
+                     DataHolder.sharedInstance.uid=(Auth.auth().currentUser?.uid)!
                     DataHolder.sharedInstance.firDataBaseRef.child("Profile").child(UserId!).observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
                         
                         DataHolder.sharedInstance.Usuario=user

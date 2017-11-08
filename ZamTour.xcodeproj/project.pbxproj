@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A81E9C89A3D54F9716D0CFB /* Pods_ZamTourUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD4267351DBDB9CF11C21F0B /* Pods_ZamTourUITests.framework */; };
 		5DDBFDC8C56EFEAA5F1137AB /* Pods_ZamTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3552352340965D5B95B4DD4 /* Pods_ZamTour.framework */; };
+		735B6ED71FB3566B00F04916 /* VCColecctionOfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735B6ED61FB3566B00F04916 /* VCColecctionOfers.swift */; };
+		735B6ED91FB3574500F04916 /* CVCCeldaCollectionOfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735B6ED81FB3574500F04916 /* CVCCeldaCollectionOfer.swift */; };
 		735E9D101FA71B3600007CD3 /* Ofers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E9D0F1FA71B3600007CD3 /* Ofers.swift */; };
 		735E9D121FA71F7100007CD3 /* Ofer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E9D111FA71F7100007CD3 /* Ofer.swift */; };
 		735E9D141FA8A60600007CD3 /* ImgOferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E9D131FA8A60600007CD3 /* ImgOferViewController.swift */; };
@@ -26,6 +28,7 @@
 		73A9B1A91F8CEB3600E3098C /* QRController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A9B1A81F8CEB3600E3098C /* QRController.swift */; };
 		73A9B1AB1F8CEC8900E3098C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A9B1AA1F8CEC8900E3098C /* AVFoundation.framework */; };
 		73CA66BE1F83D9C400E47206 /* ProfileCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA66BD1F83D9C400E47206 /* ProfileCreate.swift */; };
+		73DEA67A1FB3723200EC5788 /* PassRestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DEA6791FB3723200EC5788 /* PassRestore.swift */; };
 		D454000C678C3F465DEF4E12 /* Pods_ZamTourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21C099A7882BDF4416195FE /* Pods_ZamTourTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,8 @@
 		0CE4FED4CFDDA610CFB20040 /* Pods-ZamTourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZamTourTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZamTourTests/Pods-ZamTourTests.release.xcconfig"; sourceTree = "<group>"; };
 		4B9E33C84B286496AE28D8E0 /* Pods-ZamTourUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZamTourUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZamTourUITests/Pods-ZamTourUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7214314AEA3AC8ABEDBBD94C /* Pods-ZamTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZamTour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZamTour/Pods-ZamTour.debug.xcconfig"; sourceTree = "<group>"; };
+		735B6ED61FB3566B00F04916 /* VCColecctionOfers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCColecctionOfers.swift; sourceTree = "<group>"; };
+		735B6ED81FB3574500F04916 /* CVCCeldaCollectionOfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCCeldaCollectionOfer.swift; sourceTree = "<group>"; };
 		735E9D0F1FA71B3600007CD3 /* Ofers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ofers.swift; sourceTree = "<group>"; };
 		735E9D111FA71F7100007CD3 /* Ofer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ofer.swift; sourceTree = "<group>"; };
 		735E9D131FA8A60600007CD3 /* ImgOferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgOferViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +81,7 @@
 		73A9B1AA1F8CEC8900E3098C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		73CA66BD1F83D9C400E47206 /* ProfileCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCreate.swift; sourceTree = "<group>"; };
 		73D5059C1F7EA09D0040AFFC /* ZamTour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZamTour.entitlements; sourceTree = "<group>"; };
+		73DEA6791FB3723200EC5788 /* PassRestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassRestore.swift; sourceTree = "<group>"; };
 		B21C099A7882BDF4416195FE /* Pods_ZamTourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZamTourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37AABECB40EFDA49B157CEA /* Pods-ZamTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZamTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZamTour/Pods-ZamTour.release.xcconfig"; sourceTree = "<group>"; };
 		D3552352340965D5B95B4DD4 /* Pods_ZamTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZamTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +169,9 @@
 				735E9D0F1FA71B3600007CD3 /* Ofers.swift */,
 				735E9D111FA71F7100007CD3 /* Ofer.swift */,
 				735E9D131FA8A60600007CD3 /* ImgOferViewController.swift */,
+				735B6ED61FB3566B00F04916 /* VCColecctionOfers.swift */,
+				735B6ED81FB3574500F04916 /* CVCCeldaCollectionOfer.swift */,
+				73DEA6791FB3723200EC5788 /* PassRestore.swift */,
 			);
 			path = ZamTour;
 			sourceTree = "<group>";
@@ -516,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735B6ED91FB3574500F04916 /* CVCCeldaCollectionOfer.swift in Sources */,
 				7371216B1F7E7DCA00EA8278 /* Login.swift in Sources */,
 				735E9D121FA71F7100007CD3 /* Ofer.swift in Sources */,
 				73CA66BE1F83D9C400E47206 /* ProfileCreate.swift in Sources */,
@@ -524,8 +534,10 @@
 				739399B81F822DA4006671CF /* VCPages.swift in Sources */,
 				735E9D141FA8A60600007CD3 /* ImgOferViewController.swift in Sources */,
 				735E9D101FA71B3600007CD3 /* Ofers.swift in Sources */,
+				735B6ED71FB3566B00F04916 /* VCColecctionOfers.swift in Sources */,
 				7371213B1F7E7D3C00EA8278 /* AppDelegate.swift in Sources */,
 				7371216D1F7E7DFC00EA8278 /* Register.swift in Sources */,
+				73DEA67A1FB3723200EC5788 /* PassRestore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
