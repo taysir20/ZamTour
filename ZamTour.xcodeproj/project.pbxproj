@@ -29,6 +29,9 @@
 		73A9B1AB1F8CEC8900E3098C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A9B1AA1F8CEC8900E3098C /* AVFoundation.framework */; };
 		73CA66BE1F83D9C400E47206 /* ProfileCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CA66BD1F83D9C400E47206 /* ProfileCreate.swift */; };
 		73DEA67A1FB3723200EC5788 /* PassRestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DEA6791FB3723200EC5788 /* PassRestore.swift */; };
+		754E79B81FB995D4003DF983 /* VCMonuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E79B71FB995D4003DF983 /* VCMonuments.swift */; };
+		754E79BA1FB997F2003DF983 /* Monuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E79B91FB997F2003DF983 /* Monuments.swift */; };
+		754E79BC1FB99D85003DF983 /* TVCMonumentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E79BB1FB99D85003DF983 /* TVCMonumentsCell.swift */; };
 		D454000C678C3F465DEF4E12 /* Pods_ZamTourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21C099A7882BDF4416195FE /* Pods_ZamTourTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +85,9 @@
 		73CA66BD1F83D9C400E47206 /* ProfileCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCreate.swift; sourceTree = "<group>"; };
 		73D5059C1F7EA09D0040AFFC /* ZamTour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZamTour.entitlements; sourceTree = "<group>"; };
 		73DEA6791FB3723200EC5788 /* PassRestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassRestore.swift; sourceTree = "<group>"; };
+		754E79B71FB995D4003DF983 /* VCMonuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMonuments.swift; sourceTree = "<group>"; };
+		754E79B91FB997F2003DF983 /* Monuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monuments.swift; sourceTree = "<group>"; };
+		754E79BB1FB99D85003DF983 /* TVCMonumentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCMonumentsCell.swift; sourceTree = "<group>"; };
 		B21C099A7882BDF4416195FE /* Pods_ZamTourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZamTourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37AABECB40EFDA49B157CEA /* Pods-ZamTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZamTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZamTour/Pods-ZamTour.release.xcconfig"; sourceTree = "<group>"; };
 		D3552352340965D5B95B4DD4 /* Pods_ZamTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZamTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +178,9 @@
 				735B6ED61FB3566B00F04916 /* VCColecctionOfers.swift */,
 				735B6ED81FB3574500F04916 /* CVCCeldaCollectionOfer.swift */,
 				73DEA6791FB3723200EC5788 /* PassRestore.swift */,
+				754E79B71FB995D4003DF983 /* VCMonuments.swift */,
+				754E79B91FB997F2003DF983 /* Monuments.swift */,
+				754E79BB1FB99D85003DF983 /* TVCMonumentsCell.swift */,
 			);
 			path = ZamTour;
 			sourceTree = "<group>";
@@ -529,9 +538,12 @@
 				7371216B1F7E7DCA00EA8278 /* Login.swift in Sources */,
 				735E9D121FA71F7100007CD3 /* Ofer.swift in Sources */,
 				73CA66BE1F83D9C400E47206 /* ProfileCreate.swift in Sources */,
+				754E79BC1FB99D85003DF983 /* TVCMonumentsCell.swift in Sources */,
 				73A9B1A91F8CEB3600E3098C /* QRController.swift in Sources */,
 				737121691F7E7D8E00EA8278 /* DataHolder.swift in Sources */,
+				754E79BA1FB997F2003DF983 /* Monuments.swift in Sources */,
 				739399B81F822DA4006671CF /* VCPages.swift in Sources */,
+				754E79B81FB995D4003DF983 /* VCMonuments.swift in Sources */,
 				735E9D141FA8A60600007CD3 /* ImgOferViewController.swift in Sources */,
 				735E9D101FA71B3600007CD3 /* Ofers.swift in Sources */,
 				735B6ED71FB3566B00F04916 /* VCColecctionOfers.swift in Sources */,
