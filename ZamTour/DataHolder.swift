@@ -22,8 +22,10 @@ class DataHolder: NSObject {
     var firStorage:Storage?
     var firStorageRef:StorageReference?
     var arOfers:Array<Ofer>?
-     var arUrlMyOfers:Array<String>?
+    var arUrlMyOfers:Array<String>?
     var urlOfer:String?;
+    var arMonum:Array<Monuments>?
+    var urlMonum:String?
     
     
     

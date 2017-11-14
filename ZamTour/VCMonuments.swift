@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class VCMonuments: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tbMiTable:UITableView?
     
@@ -30,12 +30,12 @@ class VCMonuments: UIViewController, UITableViewDelegate,UITableViewDataSource {
             
             let arTemp=snapshot.value as? Array<AnyObject>
             
-            DataHolder.sharedInstance.arPerros=Array<Perro>()
+            DataHolder.sharedInstance.arMonum=Array<Monuments>()
             // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
             // guarden en otro ArrayList (perroi) y se vayan mostrando
             for co in arTemp! as [AnyObject]{
-                let perroi=Perro(valores: co as! [String:AnyObject])
-                DataHolder.sharedInstance.arPerros?.append(perroi)
+                let monumi=Monuments(valores: co as! [String:AnyObject])
+                DataHolder.sharedInstance.arMonum?.append(monumi)
             }
             
             
@@ -57,13 +57,13 @@ class VCMonuments: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(DataHolder.sharedInstance.arPerros==nil){
+        if(DataHolder.sharedInstance.arMonum==nil){
             return 0
         }else{
-            let numPerros=DataHolder.sharedInstance.arPerros?.count;
-            DataHolder.sharedInstance.numPerros=numPerros;
+            let numMonum=DataHolder.sharedInstance.arMonum?.count;
+            DataHolder.sharedInstance.numMonum=numMonum;
             
-            return  (DataHolder.sharedInstance.arPerros?.count)!
+            return  (DataHolder.sharedInstance.arMonum?.count)!
             
             
             
@@ -75,14 +75,14 @@ class VCMonuments: UIViewController, UITableViewDelegate,UITableViewDataSource {
         print("xxxxxxxxxxxxx")
         print(DataHolder.sharedInstance.uid)
         print("xxxxxxxxxxxxx")
-        let cell:TVMiCelda = tableView.dequeueReusableCell(withIdentifier: "miCelda")! as! TVMiCelda
+        let cell:TVCMonumentsCell = tableView.dequeueReusableCell(withIdentifier: "miCelda")! as! TVMiCelda
         
         // en la variable perroi, para cada posición del arrayList se irán sobrescribiendo con los nuevos
         //valores del perro.
-        let perroi:Perro=DataHolder.sharedInstance.arPerros![indexPath.row]
-        cell.lblNombreMascota?.text=perroi.sNombre
-        cell.lblEdad?.text=perroi.sEdad
-        cell.lblRaza?.text=perroi.sRaza
+        let monumi:Monuments=DataHolder.sharedInstance.arMonum![indexPath.row]
+        cell.lblNombreMascota?.text=monumi.sNombre
+        cell.lblEdad?.text=monumi.sEdad
+        cell.lblRaza?.text=monumi.sRaza
         cell.imgMascota?.layer.cornerRadius = (cell.imgMascota?.frame.size.width)! / 2;
         cell.imgMascota?.layer.masksToBounds = true;
         
@@ -90,7 +90,7 @@ class VCMonuments: UIViewController, UITableViewDelegate,UITableViewDataSource {
         cell.imgMascota?.layer.shadowOffset=CGSize(width:0, height:1.75)
         cell.imgMascota?.layer.shadowRadius = 1.7
         cell.imgMascota?.layer.shadowOpacity = 0.45
-        cell.descargaImage(ruta: perroi.sRutaImagenMascota!)
+        cell.descargaImage(ruta: monumi.sRutaImagenMascota!)
         if(perroi.sSexo=="Macho"){
             cell.imgSexo?.image = #imageLiteral(resourceName: "masculine")
             
