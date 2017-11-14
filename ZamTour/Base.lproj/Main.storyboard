@@ -449,7 +449,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="270" id="tkH-1h-fcj" customClass="TVCMonumentsCell" customModule="ZamTour" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="miCelda" rowHeight="270" id="tkH-1h-fcj" customClass="TVCMonumentsCell" customModule="ZamTour" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="270"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tkH-1h-fcj" id="4nG-1r-hhK">
@@ -469,6 +469,10 @@
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="imgMonument" destination="XQb-LH-bnl" id="Qa9-Ib-jrJ"/>
+                                                    <outlet property="lblNombreMonumento" destination="LrC-hV-38i" id="ApC-7j-OdB"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>

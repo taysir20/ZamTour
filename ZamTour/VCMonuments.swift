@@ -75,28 +75,19 @@ class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource 
         print("xxxxxxxxxxxxx")
         print(DataHolder.sharedInstance.uid)
         print("xxxxxxxxxxxxx")
-        let cell:TVCMonumentsCell = tableView.dequeueReusableCell(withIdentifier: "miCelda")! as! TVMiCelda
+        let cell:TVCMonumentsCell = tableView.dequeueReusableCell(withIdentifier: "miCelda")! as! TVCMonumentsCell
         
         // en la variable perroi, para cada posición del arrayList se irán sobrescribiendo con los nuevos
         //valores del perro.
         let monumi:Monuments=DataHolder.sharedInstance.arMonum![indexPath.row]
-        cell.lblNombreMascota?.text=monumi.sNombre
-        cell.lblEdad?.text=monumi.sEdad
-        cell.lblRaza?.text=monumi.sRaza
-        cell.imgMascota?.layer.cornerRadius = (cell.imgMascota?.frame.size.width)! / 2;
-        cell.imgMascota?.layer.masksToBounds = true;
+        cell.lblNombreMonumento?.text=monumi.sNombre
+        cell.imgMonument?.layer.cornerRadius = (cell.imgMonument?.frame.size.width)! / 2;
+        cell.imgMonument?.layer.masksToBounds = true;
         
-        cell.imgMascota?.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
-        cell.imgMascota?.layer.shadowOffset=CGSize(width:0, height:1.75)
-        cell.imgMascota?.layer.shadowRadius = 1.7
-        cell.imgMascota?.layer.shadowOpacity = 0.45
-        cell.descargaImage(ruta: monumi.sRutaImagenMascota!)
-        if(perroi.sSexo=="Macho"){
-            cell.imgSexo?.image = #imageLiteral(resourceName: "masculine")
-            
-        }else{
-            cell.imgSexo?.image = #imageLiteral(resourceName: "femenine")
-        }
+        cell.imgMonument?.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        cell.imgMonument?.layer.shadowOffset=CGSize(width:0, height:1.75)
+        cell.imgMonument?.layer.shadowRadius = 1.7
+        cell.imgMonument?.layer.shadowOpacity = 0.45
         
         
         //cell.lblNombreMascota?.text="Tay"
@@ -134,15 +125,15 @@ class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //TUVILLA
     //Método que accede al contenido de cada perro al seleccionar una fila de la tabla es decir al seleccioanar una celda
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DataHolder.sharedInstance.indexPerro=indexPath.row
-        print(DataHolder.sharedInstance.indexPerro!)
+        DataHolder.sharedInstance.indexMonument=indexPath.row
+        print(DataHolder.sharedInstance.indexMonument!)
         performSegue(withIdentifier: "trantable", sender: self)
     }
     
     @IBAction func btnVolver() {
-        DataHolder.sharedInstance.sEmail=""
-        DataHolder.sharedInstance.sPass=""
-        try! FIRAuth.auth()!.signOut()
+        DataHolder.sharedInstance.userEmail=""
+
+        try! Auth.auth().signOut()
         
         
     }

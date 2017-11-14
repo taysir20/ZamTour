@@ -26,7 +26,8 @@ class DataHolder: NSObject {
     var urlOfer:String?;
     var arMonum:Array<Monuments>?
     var urlMonum:String?
-    
+    var numMonum:Int?
+    var indexMonument:Int?
     
     
     
