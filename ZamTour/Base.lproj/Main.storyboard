@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NrE-C1-a2P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -460,8 +460,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="322.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyA-0S-7N7">
-                                                    <rect key="frame" x="20" y="196" width="335" height="126.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyA-0S-7N7">
+                                                    <rect key="frame" x="20" y="279" width="335" height="44"/>
                                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -476,7 +476,6 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="VyA-0S-7N7" firstAttribute="top" secondItem="gau-oo-XhL" secondAttribute="bottom" constant="4" id="AEC-ae-hwk"/>
                                                 <constraint firstItem="VyA-0S-7N7" firstAttribute="leading" secondItem="IRF-dm-asU" secondAttribute="leading" constant="20" symbolic="YES" id="FfJ-mK-qaf"/>
                                                 <constraint firstAttribute="trailing" secondItem="VyA-0S-7N7" secondAttribute="trailing" constant="20" symbolic="YES" id="HdW-CO-KxN"/>
                                                 <constraint firstAttribute="bottom" secondItem="VyA-0S-7N7" secondAttribute="bottom" id="WJQ-BW-25O"/>

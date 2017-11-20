@@ -13,6 +13,13 @@ import FirebaseDatabase
 class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tbMiTable:UITableView?
+    var monumentsArray = [Monuments]()
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredMonuments = [Monuments]()
+    
+    func filterContentforSearchText(searchText: String, scope: String = "All"){
+         filteredMonuments = monumentsArray.fil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +51,10 @@ class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.tbMiTable?.reloadData()
             
         })
+        searchController.searchResultsUpdater = self as? UISearchResultsUpdating
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tbMiTable?.tableHeaderView = searchController.searchBar
         
         // Do any additional setup after loading the view.
     }

@@ -13,7 +13,7 @@ class TVCMonumentsCell: UITableViewCell {
     
     @IBOutlet var lblNombreMonumento:UILabel?
     @IBOutlet var imgMonument: UIImageView?
-
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
