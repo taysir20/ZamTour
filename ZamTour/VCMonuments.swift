@@ -61,8 +61,9 @@ class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }else{
             let numMonum=DataHolder.sharedInstance.arMonum?.count;
             DataHolder.sharedInstance.numMonum=numMonum;
-            return  (DataHolder.sharedInstance.arMonum?.count)!
+            print("DataHolder.sharedInstance.numMonum");
             
+            return  (DataHolder.sharedInstance.arMonum?.count)!
             
             
         }
@@ -73,14 +74,13 @@ class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource 
 //        print("xxxxxxxxxxxxx")
 //        print(DataHolder.sharedInstance.uid)
 //        print("xxxxxxxxxxxxx")
-        let cell:TVCMonumentsCell = tableView.dequeueReusableCell(withIdentifier: "miCelda")! as! TVCMonumentsCell
+        let cell:TVCMonumentsCell = tableView.dequeueReusableCell(withIdentifier: "miCelda2")! as! TVCMonumentsCell
         
         // en la variable perroi, para cada posición del arrayList se irán sobrescribiendo con los nuevos
         //valores del perro.
         let monumi:Monuments=DataHolder.sharedInstance.arMonum![indexPath.row]
         cell.lblNombreMonumento?.text=monumi.sNombre
         cell.descargaImage(ruta: monumi.sImagen!)
-        
         
         return cell
     }
