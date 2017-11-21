@@ -25,7 +25,23 @@ class QRController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{ //
     override func viewDidLoad() {
         super.viewDidLoad()
         //miOferta?.viewDidLoad()
-        
+        DataHolder.sharedInstance.firDataBaseRef.child("Ofertas").observeSingleEvent(of: .value, with: {(snapshot)
+            in
+            // Con el método observeSingleEvent lo que hacemos es evitar que se produzcan duplicados ya que con "obseve"
+            // si se producen. El inconveniente es que no se actualizaría en tiempo real los cambios de la base de datos
+            // y habría que volver a cargar la aplicación.
+            let arTemp=snapshot.value as? Array<AnyObject>
+            DataHolder.sharedInstance.arOfers=Array<Ofer>()
+            // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
+            // guarden en otro ArrayList (perroi) y se vayan mostrando
+            for co in arTemp! as [AnyObject]{
+                let ofertai=Ofer(valores: co as! [String:AnyObject])
+                print(ofertai)
+                DataHolder.sharedInstance.arOfers?.append(ofertai)
+                
+            }
+            
+        })
         
         
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)// capturamos el vídeo
@@ -118,6 +134,7 @@ class QRController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{ //
                         DataHolder.sharedInstance.arOfers?.append(ofertai)
                         
                     }*/
+                    Database.database().reference().child("Profile").child(DataHolder.sharedInstance.uid!).child("Descuentos").updateChildValues([DataHolder.sharedInstance.arOfers!.count:text])
                     DataHolder.sharedInstance.urlOfer=text;
                     print("VALUE : ",snapshot.value!)
                     guard !snapshot.exists() else{

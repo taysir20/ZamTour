@@ -8,9 +8,9 @@
 
 import UIKit
 
-class Monuments: NSObject {
+public class Monuments: NSObject {
     var sRutaColeccionMonumentos = [String]()
-    var sNombre: String?
+   public var sNombre: String?
     var sImagen: String?
     var sDescripccion: String?
     var dbLat: Double?

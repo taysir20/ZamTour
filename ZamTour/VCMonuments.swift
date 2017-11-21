@@ -10,36 +10,28 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
-    @IBOutlet var tbMiTable:UITableView?
-    var monumentsArray = [Monuments]()
-    let searchController = UISearchController(searchResultsController: nil)
-    var filteredMonuments = [Monuments]()
-    
-    func filterContentforSearchText(searchText: String, scope: String = "All"){
-         filteredMonuments = monumentsArray.fil
-    }
+    @IBOutlet var tbMiTable:UITableView!
+    @IBOutlet var searchBar: UISearchBar!
+    var currentMonumentArray = Array<Monuments>()
+    var monumentArray = Array<Monuments>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Mediante el DataHolder se dice que se observe la raíz "Perros" del FireBase y al
-        //estar el código en la función viewDidLoad() entonces se ejecutará siempre que carguemos
-        // la tabla de la app. De este modo nos devuelve los datos de la rama coches en forma de array.
-        //observeSingleEvent se usa para que no cargue siempre la lista de datos y no gastar en exceso la tarifa
-        // plana del usuario
+     
+        setUpSearchBar()
+        alterLayout()
+    
         DataHolder.sharedInstance.firDataBaseRef.child("Monumentos").observeSingleEvent(of: .value, with: {(snapshot)
             in
-            // Con el método observeSingleEvent lo que hacemos es evitar que se produzcan duplicados ya que con "obseve"
-            // si se producen. El inconveniente es que no se actualizaría en tiempo real los cambios de la base de datos
-            // y habría que volver a cargar la aplicación.
+           
             
             let arrayMonum=snapshot.value as? Array<AnyObject>
             
             DataHolder.sharedInstance.arMonum=Array<Monuments>()
-            // Este for se encargará de ir recorriendo el arTemp y sacando los datos del FireBase para que se
-            // guarden en otro ArrayList (perroi) y se vayan mostrando
+           
+           
             for monumento in arrayMonum! as [AnyObject]{
                 let monumi=Monuments(valores: monumento as! [String:AnyObject])
                 DataHolder.sharedInstance.arMonum?.append(monumi)
@@ -47,18 +39,26 @@ class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 print(monumi)
             }
             
-
+              self.monumentArray = DataHolder.sharedInstance.arMonum!
             self.tbMiTable?.reloadData()
             
         })
-        searchController.searchResultsUpdater = self as? UISearchResultsUpdating
-        searchController.dimsBackgroundDuringPresentation = false
-        definesPresentationContext = true
-        tbMiTable?.tableHeaderView = searchController.searchBar
         
         // Do any additional setup after loading the view.
     }
-    
+    private func setUpSearchBar() {
+        searchBar.delegate = self
+    }
+ 
+    func alterLayout() {
+        // search bar in section header
+        tbMiTable.estimatedSectionHeaderHeight = 50
+        // search bar in navigation bar
+        //navigationItem.leftBarButtonItem = UIBarButtonItem(customView: searchBar)
+        navigationItem.titleView = searchBar
+        searchBar.showsScopeBar = false // you can show/hide this dependant on your layout
+        searchBar.placeholder = "Monumento"
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -96,30 +96,32 @@ class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
- 
-    //Método que accede al contenido de cada perro al seleccionar una fila de la tabla es decir al seleccioanar una celda
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        DataHolder.sharedInstance.indexMonument=indexPath.row
-//        print(DataHolder.sharedInstance.indexMonument!)
-//        performSegue(withIdentifier: "trantable", sender: self)
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        currentMonumentArray = monumentArray.filter({ monument -> Bool in
+//            switch searchBar.selectedScopeButtonIndex {
+//            case 0:
+//                if searchText.isEmpty { return true }
+//                return monument.sNombre!.lowercased().contains(searchText.lowercased())
+//
+//            default:
+//                return false
+//            }
+//        })
+//        tbMiTable.reloadData()
+//
 //    }
-//
-//    @IBAction func btnVolver() {
-//        DataHolder.sharedInstance.userEmail=""
-//
-//        try! Auth.auth().signOut()
-//
-//
-//    }
-//
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+      
+        DataHolder.sharedInstance.arMonum! = (monumentArray.filter({ monumi -> Bool in
+            switch searchBar.selectedScopeButtonIndex {
+            case 0:
+                if searchText.isEmpty { return true }
+                return monumi.sNombre!.lowercased().contains(searchText.lowercased())
+           
+            default:
+                return false
+            }
+        }))
+        tbMiTable.reloadData()
+    }
 }
