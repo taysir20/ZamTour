@@ -19,7 +19,7 @@ class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
         setUpSearchBar()
         alterLayout()
     
@@ -49,6 +49,7 @@ class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource,
     private func setUpSearchBar() {
         searchBar.delegate = self
     }
+
  
     func alterLayout() {
         // search bar in section header
@@ -56,8 +57,8 @@ class VCMonuments: UIViewController, UITableViewDelegate, UITableViewDataSource,
         // search bar in navigation bar
         //navigationItem.leftBarButtonItem = UIBarButtonItem(customView: searchBar)
         navigationItem.titleView = searchBar
-        searchBar.showsScopeBar = false // you can show/hide this dependant on your layout
-        searchBar.placeholder = "Monumento"
+        searchBar.showsScopeBar = true // you can show/hide this dependant on your layout
+        searchBar.placeholder = "..."
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

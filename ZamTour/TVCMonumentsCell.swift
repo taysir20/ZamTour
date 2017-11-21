@@ -18,8 +18,15 @@ class TVCMonumentsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        lblNombreMonumento?.layer.cornerRadius=(lblNombreMonumento?.frame.size.width)!/9
+        lblNombreMonumento?.clipsToBounds = true
+        self.imgMonument?.layer.cornerRadius = (self.imgMonument?.frame.size.width)! / 4;
+        self.imgMonument?.clipsToBounds = true
+        
+        
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
