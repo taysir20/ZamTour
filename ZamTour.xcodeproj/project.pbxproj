@@ -293,7 +293,7 @@
 				TargetAttributes = {
 					737121361F7E7D3C00EA8278 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = RFLA9A7KV8;
+						DevelopmentTeam = 86CZ52Y2CQ;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -706,7 +706,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ZamTour/ZamTour.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = RFLA9A7KV8;
+				DEVELOPMENT_TEAM = 86CZ52Y2CQ;
 				INFOPLIST_FILE = ZamTour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = UTAD.ProyectoFinal2DAMP;
@@ -724,7 +724,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ZamTour/ZamTour.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = RFLA9A7KV8;
+				DEVELOPMENT_TEAM = 86CZ52Y2CQ;
 				INFOPLIST_FILE = ZamTour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = UTAD.ProyectoFinal2DAMP;

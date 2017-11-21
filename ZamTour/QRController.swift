@@ -14,6 +14,7 @@ import FirebaseDatabase
 class QRController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{ // este delegate nos implementa los métodos para obtener cosas de la cámara
 
     @IBOutlet weak var lblResult: UILabel!
+    @IBOutlet weak var btnsig: UIButton!
     @IBOutlet weak var viewMain: UIView!
     var captureSession: AVCaptureSession? // para usar la cámara hay que iniciar una sesión de cámara
     var videoPreviewLayer: AVCaptureVideoPreviewLayer? // creamos un preview Layer donde insertamos la view
@@ -97,7 +98,14 @@ class QRController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{ //
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func recargaCount(){
+        DataHolder.sharedInstance.firDataBaseRef.child("Profile").child(DataHolder.sharedInstance.uid!).child("Descuentos").observeSingleEvent(of: .value, with: {(snapshot)
+            in
+            let arTemp=snapshot.value as? Array<AnyObject>
+                 DataHolder.sharedInstance.countOfers=arTemp?.count
+
+        })
+    }
     // método que devuelve lo capturado por la cámara
     func captureOutput(_ output: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         //if(blPausa){
@@ -110,7 +118,6 @@ class QRController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{ //
             return
             
         }
-        print("HEY !!!!! ",metadataObjects.count)
         let metaDataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         if metaDataObj.type == AVMetadataObjectTypeQRCode {
             
@@ -122,23 +129,20 @@ class QRController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{ //
                 lblResult?.text = metaDataObj.stringValue
                 let text = metaDataObj.stringValue!
                 //let text = "Ofertas/oferta1.jpg"
-                print("--____>>>> ",text)
                 
                 DataHolder.sharedInstance.firDataBaseRef.child("Ofertas").queryOrdered(byChild: "url").queryStarting(atValue: text).queryEnding(atValue: text+"\u{f8ff}").observeSingleEvent(of: .value, with: {(snapshot)
                     in
-                    /*let arTemp=snapshot.value as? Array<AnyObject>
-                    DataHolder.sharedInstance.arOfers=Array<Ofer>()
-                    for co in arTemp! as [AnyObject]{
-                        let ofertai=Ofer(valores: co as! [String:AnyObject])
-                        print(ofertai)
-                        DataHolder.sharedInstance.arOfers?.append(ofertai)
-                        
-                    }*/
-                    Database.database().reference().child("Profile").child(DataHolder.sharedInstance.uid!).child("Descuentos").updateChildValues([DataHolder.sharedInstance.arOfers!.count:text])
-                    DataHolder.sharedInstance.urlOfer=text;
+                    
+                    
+                    self.recargaCount();
+                    
+                    DataHolder.sharedInstance.urlOfer=text
                     print("VALUE : ",snapshot.value!)
                     guard !snapshot.exists() else{
+                      Database.database().reference().child("Profile").child(DataHolder.sharedInstance.uid!).child("Descuentos").updateChildValues([String(format: "/%d", (DataHolder.sharedInstance.countOfers)!):text])
+                        self.captureSession?.stopRunning()
                         self.performSegue(withIdentifier: "viewOfer", sender: self)
+                        
                         return
                     }
                     
@@ -146,7 +150,7 @@ class QRController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{ //
                     
                     
                 })
-               
+              
               
  
                 
@@ -168,13 +172,14 @@ class QRController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{ //
                 //blPausa=true
                 
                 //captureSession?.stopRunning()
-                
+              
                 
                 //CONSULTAR FIREBASE
                 //SI FIREBASE NO ENCUENTRA:
-                captureSession?.startRunning()
+               
+            
                 //SI ENCUNTRA TRANSICION
-                
+                //captureSession?.stopRunning()
             }
         }
     }
@@ -188,4 +193,11 @@ class QRController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{ //
     }
     */
 
+    @IBAction func siguientePag(_ sender: Any) {
+        var urlData="Ofertas/oferta1.jpg"
+        self.recargaCount();
+    Database.database().reference().child("Profile").child(DataHolder.sharedInstance.uid!).child("Descuentos").updateChildValues([String(format: "/%d", (DataHolder.sharedInstance.countOfers)!):urlData])
+        DataHolder.sharedInstance.urlOfer=urlData
+        self.performSegue(withIdentifier: "viewOfer", sender: self)
+    }
 }

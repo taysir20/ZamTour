@@ -28,6 +28,7 @@ class DataHolder: NSObject {
     var urlMonum:String?
     var numMonum:Int?
     var indexMonument:Int?
+    var countOfers:Int?=0;
     
     
     
